@@ -67,7 +67,7 @@ EOF
 cat > "${WALLET_LOC}/tnsnames.ora" <<EOF
 ${service_name} =
   (DESCRIPTION =
-    (ADDRESS = (PROTOCOL = TCP)(HOST = ${host_name})(PORT = ${listener_pot:-1521}))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ${host_name})(PORT = ${listener_port:-1521}))
     (CONNECT_DATA =
       (SERVER = DEDICATED)
       (SERVICE_NAME = ${service_name})
