@@ -7,7 +7,10 @@ import java.sql.DatabaseMetaData;
 
 /**
  * The equivalent of a "hello world" type application for connecting to the 
- * Oracle database 
+ * Oracle database.
+ * 
+ * Please refer to https://martincarstenbach.wordpress.com/2020/07/20/jdbc-the-oracle-database-using-maven-central/
+ * for more details, especially setting up the external password store.
  */
 public class App 
 {
