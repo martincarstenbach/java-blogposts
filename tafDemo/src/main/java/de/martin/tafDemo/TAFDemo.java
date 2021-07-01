@@ -130,9 +130,11 @@ public class TAFDemo
             for (int i = 0; i < maxIterations; i++) {
 
                 rs = pstmt.executeQuery();
-            
+           
                 while (rs.next()) {
-                    System.out.println("Connected to instance# " + rs.getString("inst_id")
+                    int currentInstance = rs.getInt("inst_id");
+
+                    System.out.println("Connected to instance# " + currentInstance
                         + " sid " + rs.getString("sid") 
                         + " failover type: " + rs.getString("failover_type") 
                         + " failover method: " + rs.getString("failover_method") 
@@ -142,8 +144,8 @@ public class TAFDemo
                         );
 
                     /* this code block is executed yet not reflected in the query output. */ 
-                    if (prevInstance != rs.getInt("inst_id")) {
-                        System.out.println("trying to set client info, module and action again");
+                    if (prevInstance != currentInstance && prevInstance != -1) {
+                        System.out.println("A failover must have occurrent. Trying to set client info, module and action again");
                         connection.setClientInfo("OCSID.CLIENTID","MARTIN");
                         connection.setClientInfo("OCSID.MODULE", "TAF Demo");
                         connection.setClientInfo("OCSID.ACTION", this.jdbcDriver);
