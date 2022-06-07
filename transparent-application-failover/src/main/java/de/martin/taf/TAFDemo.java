@@ -57,6 +57,8 @@ public class TAFDemo {
             default:
                 throw new IllegalArgumentException("driver must be either 'thin' or 'oci'");
         }
+
+        this.jdbcDriver = driver;
     }
 
     /**
