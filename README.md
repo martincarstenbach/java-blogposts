@@ -1,14 +1,19 @@
-# java-blogposts
+# Java Blogpost Repository
 
-A collection of code from my Java related blogposts
+A collection of code from my Java related blogposts at https://martincarstenbach.wordpress.com/
 
-## Maven Example 1
+These posts are intended to complement the articles and should be easier to maintain. Nevertheless these code samples aren't what I do for a living, and there is a real chance the examples are getting a little long in the tooth. Please ensure you check the POM for outdated dependencies and bump versions as needed. 
 
-This example shows how to use the Secure External Password Store together with Maven to write a simple database application.
+The following examples are currently contained in this repository
 
-The corresponding blog post can be found at [https://martincarstenbach.wordpress.com/2020/07/20/jdbc-the-oracle-database-using-maven-central/](https://martincarstenbach.wordpress.com/2020/07/20/jdbc-the-oracle-database-using-maven-central/)
+## Secure External Password Store
 
-Requires the Secure External Password Store to be in place before this code can be executed.
+This example shows how to use the Secure External Password Store together with Maven to write a simple database application. The corresponding blog post can be found at [https://martincarstenbach.wordpress.com/2020/07/20/jdbc-the-oracle-database-using-maven-central/](https://martincarstenbach.wordpress.com/2020/07/20/jdbc-the-oracle-database-using-maven-central/)
+
+**Requirements**
+
+- the Secure External Password Store to be in place before this code can be executed, have a look at the `generate_wallet.sh` script in case you'd like to create the wallet
+- the application uses a properties file, please ensure you update the only entry to match your environment!
 
 ## TAF Demo
 
