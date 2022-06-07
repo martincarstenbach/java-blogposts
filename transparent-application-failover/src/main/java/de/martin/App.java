@@ -10,7 +10,7 @@ public class App {
 
         // no command line arguments: default to "OCI"
         if (args.length == 0) {
-            driverType = "thin";
+            driverType = "oci";
         } else {
             if (args[0].equals("thin")) {
                 driverType = "thin";
