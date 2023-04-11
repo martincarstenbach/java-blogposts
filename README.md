@@ -25,3 +25,7 @@ This demo also requires setting up the secure external password store. Details a
 
 - the Secure External Password Store to be in place before this code can be executed, have a look at the `generate_wallet.sh` script in case you'd like to create the wallet
 - the application uses a properties file, please ensure you update the only entry to match your environment!
+
+## Java Stored Procedures
+
+A short demo demonstrating how to establish the "default" connection within your session and querying the database. Not a sophisticated demo, but it works. Tested with Oracle 21.7, but should run from 11.2 onwards.
