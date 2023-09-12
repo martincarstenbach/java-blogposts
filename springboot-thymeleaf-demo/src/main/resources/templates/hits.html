@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <title>SpringBoot Sample</title>
+</head>
+<body>
+<!--navigation bar-->
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Spring Boot Sample
+        </a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="shadow p-4">
+            <h3>Session Hit Count</h3>
+
+            <form method="post" th:object="${sessionHitCounter}">
+                <div class="mb-3 row">
+                    <div class="col-sm">
+                        <label for="sessionID" class="col-form-label">Session ID</label>
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" readonly class="form-control-plaintext" id="sessionID" th:field="*{sessionID}">
+                    </div>
+                    <div id="sessionIdHelp" class="form-text">Value of the auto-assigned session ID</div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="col-sm">
+                        <label for="pageCount" class="col-form-label">Number of page hits</label>
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" readonly class="form-control-plaintext" id="pageCount" th:field="*{hitCount}">
+                    </div>
+                    <div id="pageCountHelp" class="form-text">The number of times this session reloaded the page</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Increate page count</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
