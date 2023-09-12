@@ -1,6 +1,7 @@
 # Springboot Thymeleaf Demo
 
-A very small application showcasing the use of Spring Data JDBC with Oracle Database 19c and its Universal Connection Pool.
+A very small application showcasing the use of Spring Data JDBC with Oracle Database 19c and its Universal Connection Pool. Rather than providing an insecure configuration this example relies on an Oracle wallet, aka _Secure External Password Store_.  This way no username/password combinations are stored in Git.
+
 A future example will demonstrate the use of JPA/Hibernate with Oracle Database and Spring Boot 3.1.x. 
 
 Components used to create this demo application
@@ -20,3 +21,4 @@ for an example. Once the account has been created, use Liquibase (built into `sq
 - [Developers Guide For Oracle JDBC 21c on Maven Central](https://www.oracle.com/database/technologies/maven-central-guide.html)
 - [Oracle Database sample schemas](https://github.com/oracle-samples/db-sample-schemas)
 - [Universal Connection Pool](https://docs.oracle.com/en/database/oracle/oracle-database/19/jjucp/index.html#Oracle%C2%AE) 19c
+- [Documentation of all UCP settings](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html) in `application.properties`
