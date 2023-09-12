@@ -25,5 +25,11 @@ hs_err_pid*
 # vscode
 .vscode/*
 
+# IntelliJ idea
+.idea
+*.iws
+*.iml
+*.ipr
+
 #
 */target/**
