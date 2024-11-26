@@ -26,7 +26,7 @@ set -euo pipefail
 
 # ------------------------------------------------------------------------------------- GLOBALS
 
-WALLET_LOC=${HOME}/tns
+WALLET_LOC=${1:-${HOME}/tns}
 
 # ------------------------------------------------------------------------------------- MAIN
 
@@ -57,9 +57,9 @@ read -p "Enter the user to connect to: " username
 read -sp "Enter the user's password: " user_pwd
 echo
 read -p "Enter the hostname/scan of your RAC/single instance database: " host_name
-read -p "Enter the (SCAN) listener port (defaults to 1521): " listner_port
+read -p "Enter the (SCAN) listener port (defaults to 1521): " listener_port
 
-/usr/bin/mkdir "${WALLET_LOC}" || {
+/usr/bin/mkdir -vp "${WALLET_LOC}" || {
 	echo "ERR: could not create ${WALLET_LOC} for some reason, weird. Exiting"
 	exit 1
 }
