@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+-->
+<databaseChangeLog 
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <include file="sequence/s_job_log_table_sequence.xml"/> 
+  <include file="table/job_log_table_table.xml"/> 
+  <include file="package_spec/app_package_package_spec.xml"/> 
+  <include file="package_body/app_package_package_body.xml"/> 
+</databaseChangeLog> 
