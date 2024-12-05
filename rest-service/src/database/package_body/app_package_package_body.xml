@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+ xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+ <changeSet id="24e930655c15cb9625e4a3ea91cd9ef5350e3d7b" author="(MARTIN)-Generated" failOnError="true"    runOnChange="false"  runAlways="false"  runInTransaction="false"  >
+  <n0:createOraclePackageBody objectName="APP_PACKAGE" objectType="PACKAGE_BODY" ownerName="MARTIN"  replaceIfExists="false" >
+    <n0:source><![CDATA[CREATE OR REPLACE EDITIONABLE PACKAGE BODY "%USER_NAME%"."APP_PACKAGE" AS
+
+    /**
+     * simulate a long running job
+     */
+    FUNCTION do_work (
+        p_requested_by VARCHAR2
+    ) RETURN NUMBER AS
+        l_id job_log_table.id%TYPE;
+    BEGIN
+        l_id := s_job_log_table.nextval;
+        
+        INSERT INTO job_log_table (
+            id,
+            name,
+            requested_by,
+            start_time
+        ) VALUES (
+            l_id,
+            'PL/SQL job',
+            p_requested_by,
+            systimestamp
+        );
+
+        COMMIT;
+        
+        dbms_session.sleep(10);
+        
+        UPDATE job_log_table
+        SET
+            finish_time = systimestamp
+        WHERE
+            id = l_id;
+
+        COMMIT;
+        
+        RETURN l_id;
+        
+    END do_work;
+
+END app_package;
+/]]></n0:source>
+      </n0:createOraclePackageBody>
+ </changeSet>
+</databaseChangeLog>
