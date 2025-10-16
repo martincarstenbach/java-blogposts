@@ -1,0 +1,4 @@
+db.url=jdbc:oracle:thin:@//host:port/freepdb1
+db.username=your_user
+db.password=your_password
+
