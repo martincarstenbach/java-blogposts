@@ -33,3 +33,4 @@ instantclient*
 .idea
 
 **/db.properties
+.env
